@@ -1,0 +1,11 @@
+<%= form_with model: @memo, local: true do |f| %>
+  <div class="form-group">
+    <%= label_tag "form-title", "タイトル" %>
+    <%= f.text_field :title, id:"form-title", class:"form-control", placeholder: "タイトル" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "form-content", "内容" %>
+    <%= f.text_field :body, id:"form-content", class:"form-control", placeholder: "内容" %>
+  </div>
+    <%= f.submit "記録", class:"btn btn-primary" %>
+<% end %>
