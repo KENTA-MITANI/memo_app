@@ -8,7 +8,7 @@ class MemosController < ApplicationController
 
   def create
     Memo.create(memo_params)
-    redirect_to "/"
+    redirect_to "/memos"
   end
 
   private
