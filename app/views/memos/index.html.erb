@@ -4,8 +4,12 @@
 
   <% @memos.each do |memo| %>
     <div class="card bg-light mb-3" style="max-width: 18rem;">
-      <div class="card-header alert-primary"><%= memo.title %></div>
+      <div class="card-header alert-primary">
+      <%= memo.title %>
+      <%= link_to "削除", memo_path(memo), method: :delete, data: {confirm: "削除しますか?"} %>
+      </div>
       <div class="card-body">
+
         <p class="card-text"><%= memo.body %></p>
       </div>
     </div>
