@@ -12,6 +12,15 @@ class MemosController < ApplicationController
     redirect_to "/memos"
   end
 
+  def edit
+    @memo = memo.find(params[:id])
+  end
+
+  def update
+    memo = Memo.find(params[:id])
+    memo.update(memo_params)
+  end
+
   def destroy
     memo = Memo.find(params[:id])
     memo.destroy
