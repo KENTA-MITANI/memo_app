@@ -1,6 +1,13 @@
-<h3>新規作成</h3>
-<a href="memos/new" class="btn btn-primary">新規メモ作成</a>
+<div class="container">
+  <h3>Memo List</h3>
+  <a href="memos/new" class="btn btn-primary">新規メモ作成</a>
 
-<% @memos.each do |memo| %>
-  <p><%= memo.title %> <%= memo.body %></p>
-<% end %>
+  <% @memos.each do |memo| %>
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-header alert-primary"><%= memo.title %></div>
+      <div class="card-body">
+        <p class="card-text"><%= memo.body %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
