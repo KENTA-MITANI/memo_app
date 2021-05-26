@@ -7,6 +7,7 @@
       <div class="card-header alert-primary">
       <%= memo.title %>
       <%= link_to "削除", memo_path(memo), method: :delete, data: {confirm: "削除しますか?"} %>
+      <%= link_to "編集", edit_memo_path(memo) %>
       </div>
       <div class="card-body">
 
