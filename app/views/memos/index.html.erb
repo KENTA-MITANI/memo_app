@@ -1,14 +1,13 @@
-<h3>新規作成</h3>
+<div class="container">
+  <h3>Memo List</h3>
+  <a href="memos/new" class="btn btn-primary">新規メモ作成</a>
 
-<a href="#" class="btn btn-primary">アイコン無し</a>
-<a href="#" class="btn btn-primary"><i class="fas fa-envelope-open-text"></i> 詳細</a>
-
-<%= link_to "アイコン無し", "#", class: "btn btn-success" %>
-<%= link_to '<i class="far fa-edit"></i> 編集'.html_safe, "#", class: "btn btn-success" %>
-
-<%= link_to "#", class: "btn btn-danger" do %>
-  アイコン無し
-<% end %>
-<%= link_to "#", class: "btn btn-danger" do %>
-  <i class="far fa-trash-alt"></i> 削除
-<% end %>
+  <% @memos.each do |memo| %>
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-header alert-primary"><%= memo.title %></div>
+      <div class="card-body">
+        <p class="card-text"><%= memo.body %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
