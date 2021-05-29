@@ -5,10 +5,11 @@ class MemosController < ApplicationController
 
   def new
     @memo = Memo.new
+    @categories = Category.all
   end
 
   def create
-    Memo.create(memo_params)
+    Memo.create!(memo_params)
     redirect_to "/memos"
   end
 
@@ -31,6 +32,6 @@ class MemosController < ApplicationController
   private
 
   def memo_params
-    params.require(:memo).permit(:title, :body)
+    params.require(:memo).permit(:title, :body, :category_id)
   end
 end
