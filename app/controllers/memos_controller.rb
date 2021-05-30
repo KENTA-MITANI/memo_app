@@ -15,6 +15,7 @@ class MemosController < ApplicationController
 
   def edit
     @memo = Memo.find(params[:id])
+    @categories = Category.all
   end
 
   def update
