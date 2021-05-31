@@ -24,3 +24,33 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   text-align:right;
   margin-top: -40px;
 }
+
+main {
+  padding-top: 30px;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+
+}
+
+.text-name{
+  padding-bottom: 10px;
+}
+
+.navbar-nav {
+  font-size: 15px;
+}
+
+.card {
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar {
+  margin: 0 auto;
+}
+
+.text-name{
+  text-align: center;
+}
