@@ -14,10 +14,9 @@
           カテゴリ
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <ul class="dropdown-item">
           <% @categories.each do |category|%>
           <ul class="dropdown-item">
-            <li><a href= "/categories/<%= category.id%>"><%= category.name %></a></li>
+            <a href= "/categories/<%= category.id%>"><%= category.name %></a>
           </ul>
           <% end %>
         </div>
