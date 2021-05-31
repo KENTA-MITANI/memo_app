@@ -1,11 +1,12 @@
 class MemosController < ApplicationController
+  before_action :set_categories, only: [:index, :new, :edit]
+
   def index
     @memos = Memo.all
   end
 
   def new
     @memo = Memo.new
-    @categories = Category.all
   end
 
   def create
@@ -15,7 +16,6 @@ class MemosController < ApplicationController
 
   def edit
     @memo = Memo.find(params[:id])
-    @categories = Category.all
   end
 
   def update
@@ -31,6 +31,10 @@ class MemosController < ApplicationController
   end
 
   private
+
+  def set_categories
+    @categories = Category.all
+  end
 
   def memo_params
     params.require(:memo).permit(:title, :body, :category_id)

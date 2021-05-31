@@ -1,0 +1,20 @@
+<h3>カテゴリ：<%= @category.name %></h3>
+ <% @memos.each do |memo| %>
+  <div class="card bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header alert-primary">
+      <h4><%= memo.title %></h4>
+      <p><%= memo.category.name %></p>
+      <div class="buttons">
+        <%= link_to memo_path(memo), method: :delete, data: {confirm: "削除しますか?"} do %>
+          <div class="far fa-trash-alt"><i class="fas fa-times fa-xs"></i></div>
+        <% end %>
+        <%= link_to edit_memo_path(memo) do%>
+          <div class="far fa-edit"><i class="fas fa-times fa-xs"></i></div>
+        <% end %>
+      </div>  
+    </div>
+    <div div class="card-body">
+      <p class="card-text"><%= memo.body %></p>
+    </div>
+  </div>
+<% end %>
