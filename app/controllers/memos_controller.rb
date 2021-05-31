@@ -2,7 +2,7 @@ class MemosController < ApplicationController
   before_action :set_categories, only: [:index, :new, :edit]
 
   def index
-    @memos = Memo.all
+    @memos = Memo.all.order(created_at: :desc)
   end
 
   def new
