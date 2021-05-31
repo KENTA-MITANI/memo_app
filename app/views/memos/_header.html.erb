@@ -14,12 +14,15 @@
           カテゴリ
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">work</a>
-          <a class="dropdown-item" href="#">life</a>
-          <a class="dropdown-item" href="#">hobby</a>
-          <a class="dropdown-item" href="#">other</a>
+          <ul class="dropdown-item">
+          <% @categories.each do |category|%>
+          <ul class="dropdown-item">
+            <li><a href= "/categories/<%= category.id%>"><%= category.name %></a></li>
+          </ul>
+          <% end %>
         </div>
       </li>
     </ul>
   </div>
 </nav>
+
