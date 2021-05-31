@@ -11,9 +11,9 @@
   <body>
     <header>
       <%= render partial: 'memos/header' %>
+      <%= render "layouts/flash" %>
     </header>
     <main>
-      <%= render "layouts/flash" %>
       <div class="container">
         <%= yield %>
       </div>
