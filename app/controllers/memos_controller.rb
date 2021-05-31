@@ -2,7 +2,7 @@ class MemosController < ApplicationController
   before_action :set_categories, only: [:index, :new, :edit]
 
   def index
-    @memos = Memo.all
+    @memos = Memo.all.order(created_at: :desc)
   end
 
   def new
@@ -11,7 +11,7 @@ class MemosController < ApplicationController
 
   def create
     Memo.create(memo_params)
-    redirect_to "/memos"
+    redirect_to "/memos", notice: "投稿しました"
   end
 
   def edit
@@ -21,13 +21,13 @@ class MemosController < ApplicationController
   def update
     memo = Memo.find(params[:id])
     memo.update(memo_params)
-    redirect_to "/memos"
+    redirect_to "/memos", notice: "更新しました"
   end
 
   def destroy
     memo = Memo.find(params[:id])
     memo.destroy
-    redirect_to "/memos"
+    redirect_to root_path, alert: "削除しました"
   end
 
   private

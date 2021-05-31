@@ -11,11 +11,12 @@
   <body>
     <header>
       <%= render partial: 'memos/header' %>
+      <%= render "layouts/flash" %>
     </header>
     <main>
       <div class="container">
         <%= yield %>
       </div>
-      <main>
-      </body>
-    </html>
+    </main>
+  </body>
+</html>
