@@ -36,7 +36,7 @@ main {
 .text-name{
   text-align: center;
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .navbar-nav {
@@ -58,6 +58,12 @@ main {
 }
 .card-body {
   height: 180px;
+}
+
+.seach {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .alert-notice {
