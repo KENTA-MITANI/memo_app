@@ -2,8 +2,12 @@ class MemosController < ApplicationController
   before_action :set_categories, only: [:index, :new, :edit]
   require 'csv'
 
+    
+    
+
   def index
-    @memos = Memo.all.order(id: :asc).page(params[:page]).per(12)
+    @q = Memo.where(params[:title]).ransack(params[:q])
+    @memos = @q.result.order(id: :asc).page(params[:page]).per(12)
 
     #csvデータ作成
     respond_to do |format|
