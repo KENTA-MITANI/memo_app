@@ -21,4 +21,6 @@ Memo.find_or_create_by(title: "中間テスト", body: "次から頑張る", cat
 Memo.find_or_create_by(title: "昼ごはん", body: "プログラミング", category_id: "2")
 Memo.find_or_create_by(title: "じゃんけん", body: "グーしか出さない", category_id: "4")
 Memo.find_or_create_by(title: "お米", body: "コシヒカリしか勝たん", category_id: "4")
+Memo.find_or_create_by(title: "お出かけ", body: "パルコに行く", category_id: "3")
+Memo.find_or_create_by(title: "掃除", body: "廊下を雑巾がけする", category_id: "4")
 puts "categoryデータをインポートしました"

@@ -2,7 +2,7 @@ class MemosController < ApplicationController
   before_action :set_categories, only: [:index, :new, :edit]
 
   def index
-    @memos = Memo.all.order(id: :asc).page(params[:page]).per(9)
+    @memos = Memo.all.order(id: :asc).page(params[:page]).per(12)
   end
 
   def new
