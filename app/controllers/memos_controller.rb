@@ -6,7 +6,7 @@ class MemosController < ApplicationController
     
 
   def index
-    @q = Memo.where(params[:title]).ransack(params[:q])
+    @q = Memo.ransack(params[:q])
     @memos = @q.result.order(id: :asc).page(params[:page]).per(12)
 
     #csvデータ作成
