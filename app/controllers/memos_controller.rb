@@ -1,13 +1,13 @@
-require 'csv'
 class MemosController < ApplicationController
   before_action :set_categories, only: [:index, :new, :edit]
+  require 'csv'
 
   def index
     @memos = Memo.all.order(id: :asc).page(params[:page]).per(12)
 
     #csvデータ作成
     respond_to do |format|
-      @memos_csv = Memo.all
+      @memos_csv = Memo.all.order(id: :asc)
       format.html
       format.csv do |csv|
         send_posts_csv(@memos_csv)
@@ -50,7 +50,7 @@ class MemosController < ApplicationController
         csv << values
       end
     end
-    send_data(csv_data, filename: "memos.csv")
+    send_data(csv_data, filename: "memos_list.csv")
   end
 
   private
