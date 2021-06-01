@@ -43,10 +43,10 @@ class MemosController < ApplicationController
   #csvデータ出力
   def send_posts_csv(memos)
     csv_data = CSV.generate do |csv|
-      header = %w(id title body)
+      header = %w(id title body category)
       csv << header
       memos.each do |memo|
-        values = [memo.id, memo.title, memo.body]
+        values = [memo.id, memo.title, memo.body, memo.category.name]
         csv << values
       end
     end
