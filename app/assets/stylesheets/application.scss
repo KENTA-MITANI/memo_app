@@ -34,6 +34,7 @@ main {
 }
 
 .text-name{
+  text-align: center;
   padding-top: 40px;
   padding-bottom: 20px;
 }
@@ -52,8 +53,11 @@ main {
   margin: 0 auto;
 }
 
-.text-name{
-  text-align: center;
+.form-content{
+  padding-top: 180px;
+}
+.card-body {
+  height: 180px;
 }
 
 .alert-notice {
