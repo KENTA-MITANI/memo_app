@@ -1,8 +1,10 @@
 class MemosController < ApplicationController
   before_action :set_categories, only: [:index, :new, :edit]
+  
+  PER_PAGE = 15
 
   def index
-    @memos = Memo.all.order(created_at: :desc)
+    @memos = Memo.all.order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def new
