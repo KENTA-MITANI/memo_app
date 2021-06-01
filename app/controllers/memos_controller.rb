@@ -1,8 +1,18 @@
+require 'csv'
 class MemosController < ApplicationController
   before_action :set_categories, only: [:index, :new, :edit]
 
   def index
     @memos = Memo.all.order(id: :asc).page(params[:page]).per(12)
+
+    #csvデータ作成
+    respond_to do |format|
+      @memos_csv = Memo.all
+      format.html
+      format.csv do |csv|
+        send_posts_csv(@memos_csv)
+      end
+    end
   end
 
   def new
@@ -28,6 +38,19 @@ class MemosController < ApplicationController
     memo = Memo.find(params[:id])
     memo.destroy
     redirect_to root_path, alert: "削除しました"
+  end
+
+  #csvデータ出力
+  def send_posts_csv(memos)
+    csv_data = CSV.generate do |csv|
+      header = %w(id title body)
+      csv << header
+      memos.each do |memo|
+        values = [memo.id, memo.title, memo.body]
+        csv << values
+      end
+    end
+    send_data(csv_data, filename: "memos.csv")
   end
 
   private
