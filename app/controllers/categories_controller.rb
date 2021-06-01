@@ -3,7 +3,9 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @memos = Memo.where(category_id: params[:id]).order(id: :asc).page(params[:page]).per(12)
+
+    @q = Memo.ransack(params[:q])
+    @memos = @q.result.where(category_id: params[:id]).order(id: :asc).page(params[:page]).per(12)
   end
 
   def set_categories
