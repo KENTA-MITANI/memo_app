@@ -26,7 +26,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 }
 
 main {
-  padding-top: 30px;
+  padding-top: 55px;
   display: flex;
   flex-flow: column;
   min-height: 100vh;
@@ -34,7 +34,9 @@ main {
 }
 
 .text-name{
-  padding-bottom: 10px;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 .navbar-nav {
@@ -51,8 +53,11 @@ main {
   margin: 0 auto;
 }
 
-.text-name{
-  text-align: center;
+.form-content{
+  padding-top: 180px;
+}
+.card-body {
+  height: 180px;
 }
 
 .alert-notice {
