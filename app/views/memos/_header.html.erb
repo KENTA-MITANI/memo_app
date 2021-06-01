@@ -15,9 +15,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% @categories.each do |category|%>
-          <ul class="dropdown-item">
-            <a href= "/categories/<%= category.id%>"><%= category.name %></a>
-          </ul>
+            <a href= "/categories/<%= category.id%>", class="dropdown-item"><%= category.name %></a>
           <% end %>
         </div>
       </li>
