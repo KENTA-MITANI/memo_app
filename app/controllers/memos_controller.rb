@@ -2,9 +2,6 @@ class MemosController < ApplicationController
   before_action :set_categories, only: [:index, :new, :edit]
   require 'csv'
 
-    
-    
-
   def index
     @q = Memo.ransack(params[:q])
     @memos = @q.result.order(id: :asc).page(params[:page]).per(12)

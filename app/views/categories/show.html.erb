@@ -1,12 +1,4 @@
 <h2 class="text-name">カテゴリ：<%= @category.name %></h2>
-<div class = "seach">
-  <%= search_form_for @q do |f| %>
-    <div class="d-flex justify-content-center mb-3" style="width: 300px;">
-      <%= f.search_field :title_cont, class:"form-control col-xs-4", placeholder:"タイトル入力" %>
-      <%= f.submit "検索", class:"ml-2"%> 
-    </div>
-  <% end %>
-</div>
 
 <div class="row">
   <% @memos.each do |memo| %>
