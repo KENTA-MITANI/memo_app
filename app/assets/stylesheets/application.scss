@@ -20,6 +20,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
 @import "@fortawesome/fontawesome-free/scss/regular";
 
+/*削除＆編集ボタン*/
 .buttons {
   text-align:right;
   margin-top: -40px;
@@ -33,6 +34,7 @@ main {
 
 }
 
+/*memoリストタイトル*/
 .text-name{
   text-align: center;
   padding-top: 40px;
@@ -43,6 +45,7 @@ main {
   font-size: 15px;
 }
 
+/*カードサイズ調整*/
 .card {
   margin-bottom: 30px;
   margin-left: auto;
@@ -56,10 +59,12 @@ main {
 .form-content{
   padding-top: 180px;
 }
+
 .card-body {
   height: 180px;
 }
 
+/*検索欄*/
 .seach {
   display: flex;
   justify-content: center;
@@ -67,14 +72,17 @@ main {
   padding-bottom: 10px;
 }
 
+/*flash表示(新規登録＆編集)*/
 .alert-notice {
   @extend .alert-success;
 }
 
+/*flash表示(削除)*/
 .alert-alert {
   @extend .alert-danger;
 }
 
+/*ページネーション*/
 .pagination {
   display: flex;
   justify-content: center;
