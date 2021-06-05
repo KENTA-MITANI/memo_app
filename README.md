@@ -20,7 +20,7 @@
 
 # 環境開発・使用技術
 ・Ruby 2.7.2
-<br>・Rails 6.0.3.5
+<br>・Rails 6.1.3.2
 <br>・SCSS
 <br>・Bootstrap
 <br>・JavaScript
